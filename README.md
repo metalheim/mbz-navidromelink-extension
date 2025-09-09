@@ -19,3 +19,13 @@ A browser extension that adds a button to musicbrainz website, linking to the ar
 ## Screenshots
 ![Settings provided by the browser extension](/screenshots/browser-extension-settings.png)
 ![Example of how the injected link looks on MBZ website](/screenshots/mbz-injected-link.png)
+
+## Example
+Configure the Navidrome Demo Instance using
+- https://demo.navidrome.org
+- demo
+- demo
+
+Go to [Album NCS: Infinity on MusicBrainz](https://musicbrainz.org/release/97b74e59-f194-40b6-9bc9-cb7267364ffd)
+It should show a link to [Album NCS: Infinity on the navidrome demo instance](https://demo.navidrome.org/app/#/album/5xhNxRFhSPTFsVsPkCNq8N/show)
+in the "External Links" Section, right under "Discogs"
