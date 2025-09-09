@@ -39,9 +39,14 @@ function subsonicSearch3(queryterm){
 				var navidromelink = credentials.url+"/app/#/album/"+searchResults.album[0].id+"/show";
 			}
 			console.log("Found matching MBID in navidrome: "+navidromelink);
-			window.addEventListener('DOMContentLoaded', function() {
+			
+			if (document.readyState === 'loading') {
+				window.addEventListener('DOMContentLoaded', function() {
+					addNavidromeLink(navidromelink);
+				});
+			}else{
 				addNavidromeLink(navidromelink);
-			});
+			}
 		}
 	})
 	.catch(console.error);
@@ -59,7 +64,7 @@ function subsonicSearch3(queryterm){
 				console.log("mbid found: "+mbid[0]);
 				subsonicSearch3(mbid[0]);
 			}else{
-				console.log("authenticated but no mbid found in url");
+				console.log("No mbid found in URL");
 			}
 		}else{
 			console.log("Not authenticated");
@@ -88,4 +93,5 @@ function addNavidromeLink(navidromelink){
 		sidebar.appendChild(linklist);
 	}
 	linklist.appendChild(newListItem);
+	console.log("Injected navidrome link to mbz website sidebar: "+navidromelink);
 }
