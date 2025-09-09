@@ -24,8 +24,8 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*.musicbrainz.org/*"],
-			"js": [	"mbz-navidromelinker.js"],
-			"css": [	"mbz-navidromelink.css"],
+			"js": ["mbz-navidromelinker.js"],
+			"css": ["mbz-navidromelink.css"],
 			"run_at": "document_start"
 		}
 	]
