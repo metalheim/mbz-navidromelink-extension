@@ -5,19 +5,19 @@
 	"description": "Adds a button to every musicbrainz website, linking to the artist/song/album in your navidrome server",
 	"homepage_url": "https://github.com/metalheim/mbz-navidromelink",
 	"icons": {
-		"48": "icons/border-48.png"
+		"48": "icons/favicon-32x32.png"
 	},
 	"permissions": [
 		"activeTab",
 		"storage"
 	],
 	"browser_action": {
-		"default_icon": "icons/border-48.png",
+		"default_icon": "icons/favicon-32x32.png",
 		"default_title": "mbz-navidromelink",
 		"default_popup": "login.html"
 	},
 	"web_accessible_resources": [
-		"icons/border-48.png",
+		"icons/favicon-32x32.png",
 		"mbz-navidromelink.css",
 		"mbz-navidromelinker.js"
 	],
