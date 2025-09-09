@@ -1,7 +1,14 @@
 # mbz-navidromelink-extension
 A browser extension that adds a button to musicbrainz website, linking to the artist/album in your navidrome server.
 
-It works by
+## how to install
+- grab the `mbz-navidromelink-extension.zip` file from releases
+- unpack zip file
+- go to your browsers "Manage extensions" settings page
+- Enable "developer mode"
+- search for "load unpacked extensions" or similar and select the unzipped folder
+
+## how it works
 1. you enter your navidrome credentials (URL, username, password)
 2. extension tests credentials and saves them to your browsers localstorage (url, username, token, salt)
 3. Whenever you open a musicbrainz website (matches ```*://*.musicbrainz.org/*```) the extension:
