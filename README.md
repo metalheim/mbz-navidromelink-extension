@@ -1,5 +1,5 @@
 # mbz-navidromelink-extension
-A browser extension that adds a button to musicbrainz website, linking to the artist/album in your navidrome server.
+A browser extension that adds a button to musicbrainz website, linking to the artist/album in your personal [navidrome](https://github.com/navidrome/navidrome) server.
 
 ## how to install
 - grab the `mbz-navidromelink-extension.zip` file from releases
