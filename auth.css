@@ -1,0 +1,21 @@
+html{
+	background:#eee;
+	color:#111;
+	filter:invert(1);
+}
+@media (prefers-color-scheme: light) {
+	html{
+		filter:invert(0);
+	}
+	button{
+		background:#6495ED !important;
+	}
+}
+*{
+	font-family:sans-serif;
+	border-radius:2px;
+}
+button{
+	width:100%;
+	background:#9b6a12;
+}

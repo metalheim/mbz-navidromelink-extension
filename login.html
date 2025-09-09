@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<link rel="stylesheet" href="auth.css" />
+		<script type="text/javascript" src="auth.js"></script>
+		<link rel="manifest" href="manifest.json" />
+	</head>
+	<body>
+		<form id="loginform">
+			<fieldset "loginFieldset">
+				<legend>Navidrome server login</legend>
+				<input type="url" id="url" "name="url" pattern="https://.*" placeholder="https://demo.navidrome.org" required/>
+				<label for="url">Server URL</label><br />
+				
+				<input type="text" id="username" name="username" placeholder="demo" required/>
+				<label for="username">Username</label><br />
+				
+				<input type="password" id="password" name="password" placeholder="demo" required/>
+				<label for="password">Password</label><br />
+				
+				<button type="button" id="loginButton">Test & Save</button>
+				<button type="button" id="logoutButton">Log Out</button>
+			</fieldset>
+			
+		</form>
+	</body>
+</html>
