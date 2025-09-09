@@ -7,8 +7,8 @@ html{
 	html{
 		filter:invert(0);
 	}
-	button{
-		background:#6495ED !important;
+	*.invalid, *:invalid{
+		border-color:#ff1400;
 	}
 }
 *{
@@ -17,5 +17,7 @@ html{
 }
 button{
 	width:100%;
-	background:#9b6a12;
+}
+*.invalid, *:invalid{
+	border-color:#00ebff;
 }

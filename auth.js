@@ -3,6 +3,8 @@ var $ = function( id ) { return document.getElementById( id ); };
 
 var credentials = new Object();
 function authenticate(){
+	$('loginButton').classList.remove("invalid");
+			
 	url = $('url').value;
 	usr = $('username').value;
 	pwd = $('password').value;
@@ -24,24 +26,28 @@ function authenticate(){
 	  }
 	})
 	.then((response) => {
-		console.log("response.status =", response.status); // response.status = 200
-		if(response.status === 403){
+		if(response.status !== 200){
 			deauthenticate();
+		}else{
+			return response.json();
 		}
-		console.log(response);
-		return response.json();
 	})
 	.then((data) => {
-		saveCredentialsToLocalstorage(url, data.username, data.subsonicToken, data.subsonicSalt);
-		
-		var inputs = document.getElementsByTagName("input");
-		for (let input of inputs){
-			input.disabled = "disabled";
-		};
+		if(data.username && data.subsonicToken && data.subsonicSalt){
+			saveCredentialsToLocalstorage(url, data.username, data.subsonicToken, data.subsonicSalt);
 			
-		$('loginButton').style.display = "none";
-		$('logoutButton').style.display = "inline-block";
-		console.log("Authenticated via API from entered credentials");
+			var inputs = document.getElementsByTagName("input");
+			for (let input of inputs){
+				input.disabled = "disabled";
+			};
+				
+			$('loginButton').style.display = "none";
+			$('logoutButton').style.display = "inline-block";
+			$('loginButton').innerText = "Test & Save";
+			console.log("Authenticated via API from entered credentials");
+		}else{
+			deauthenticate();
+		}
 	})
 	.catch(console.error);
 }
@@ -53,6 +59,8 @@ function deauthenticate(){
 	};
 	console.log("Not authenticated");
 	$('logoutButton').style.display = "none";
+	$('loginButton').classList.add("invalid");
+	$('loginButton').innerText = "Auth failed, try again";
 	$('loginButton').style.display = "inline-block";
 };
 
